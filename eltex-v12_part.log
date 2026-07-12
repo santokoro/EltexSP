@@ -1,0 +1,134 @@
+eltex-v12@eltex-2026-summer:~$ screen -ls
+No Sockets found in /run/screen/S-eltex-v12.
+
+eltex-v12@eltex-2026-summer:~$ screen ls
+[screen is terminating]
+eltex-v12@eltex-2026-summer:~$ screen -ls
+No Sockets found in /run/screen/S-eltex-v12.
+
+eltex-v12@eltex-2026-summer:~$ screen -ls
+No Sockets found in /run/screen/S-eltex-v12.
+
+eltex-v12@eltex-2026-summer:~$ ls -la
+total 164
+drwxr-x--- 17 eltex-v12 eltex-v12  4096 Jul  8 11:26 .
+drwxr-xr-x 49 root      root       4096 Jul  6 12:27 ..
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-01
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-02
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-03
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-04
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-05
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-06
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-07
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-08
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-09
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-10
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-11
+drwxr-xr-x  2 eltex-v12 eltex-v12  4096 Jul  7 21:28 2026-12
+-rw-------  1 eltex-v12 eltex-v12  7651 Jul  9 21:56 .bash_history
+-rw-r--r--  1 eltex-v12 eltex-v12   220 Mar 30  2024 .bash_logout
+-rw-r--r--  1 eltex-v12 eltex-v12  3526 Mar 30  2024 .bashrc
+drwx------  3 eltex-v12 eltex-v12  4096 Jul  6 12:40 .config
+drwxr-xr-x  3 eltex-v12 eltex-v12  4096 Jul  7 23:40 D1
+-rw-r--r--  1 eltex-v12 eltex-v12   148 Jul  7 23:50 eltex-v12_part3.log
+-rw-r--r--  1 eltex-v12 eltex-v12 53141 Jul  7 21:27 eltex-v12_part.log
+-rw-r--r--  1 eltex-v12 eltex-v12     0 Jul  7 23:47 file.txt
+-rw-r--r--  1 eltex-v12 eltex-v12  2117 Jul  7 20:18 hardcopy.0
+-rw-------  1 eltex-v12 eltex-v12    20 Jul  6 12:19 .lesshst
+-rw-r--r--  1 eltex-v12 eltex-v12   807 Mar 30  2024 .profile
+-rw-r--r--  1 eltex-v12 eltex-v12   130 Jul  7 14:15 report_part1.txt
+drwx------  2 eltex-v12 eltex-v12  4096 Jul  8 11:26 .ssh
+-rw-------  1 eltex-v12 eltex-v12   782 Jul  7 14:15 .viminfo
+eltex-v12@eltex-2026-summer:~$ tail -30 eltex-v12_part.log
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:50> export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:25:59> bash --norc --noprofile
+eltex-v12@eltex-2026-summer-21:26:08> exit
+exit
+eltex-v12@eltex-2026-summer-21:27:05> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:27:10> tail -20 ${eltex-v12@eltex-2026-summer-21:27:45> tail -20 ${USER}_part.log
+eltex-v12@h\-21:23:58>bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@h\-21:24:06>export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:24:15> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:23> export PS1="\u@\h-\t> "
+bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:50> export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:25:59> bash --norc --noprofile
+eltex-v12@eltex-2026-summer-21:26:08> exit
+exit
+eltex-v12@eltex-2026-summer-21:27:05> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:27:10> tail -20 ${eltex-v12@eltex-2026-summer-21:27:45> eltex-v12@eltex-2026-summer-21:27:53> eltex-v12@eltex-2026-summer:~$ less eltex-v12_part.log
+eltex-v12@eltex-2026-summer:~$ ls -li D1/file.txt D1/D2/D3/hard_link D1/D2/D3/soft_link
+cat D1/D2/D3/hard_link
+cat D1/D2/D3/soft_link
+ls: cannot access 'D1/file.txt': No such file or directory
+917642 -rw-r--r-- 2 eltex-v12 eltex-v12 12 Jul  7 23:50 D1/D2/D3/hard_link
+917644 lrwxrwxrwx 1 eltex-v12 eltex-v12 14 Jul  8 00:04 D1/D2/D3/soft_link -> D1/D2/file.txt
+Random text
+cat: D1/D2/D3/soft_link: No such file or directory
+eltex-v12@eltex-2026-summer:~$ rm -rf D1/D2
+eltex-v12@eltex-2026-summer:~$ echo "rm -rf D1/D2" >> ${USER}_part3.log
+eltex-v12@eltex-2026-summer:~$ mv D1/D2/file.txt D1/
+mv: cannot stat 'D1/D2/file.txt': No such file or directory
+eltex-v12@eltex-2026-summer:~$ find ~ -name "file.txt" 2>/dev/null
+/home/eltex-v12/file.txt
+eltex-v12@eltex-2026-summer:~$ screen -S eltex-v12_part3
+bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:50> export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:25:59> bash --norc --noprofile
+eltex-v12@eltex-2026-summer-21:26:08> exit
+exit
+eltex-v12@eltex-2026-summer-21:27:05> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:27:10> tail -20 ${USER}_part.log
+eltex-v12@h\-21:23:58>bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@h\-21:24:06>export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:24:15> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:23> export PS1="\u@\h-\t> "
+bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:50> export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:25:59> bash --norc --noprofile
+eltex-v12@eltex-2026-summer-21:26:08> exit
+exit
+eltex-v12@eltex-2026-summer-21:27:05> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:27:10> tail -20 ${eltex-v12@eltex-2026-summer-21:27:45> tail -20 ${USER}_part.log
+eltex-v12@h\-21:23:58>bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@h\-21:24:06>export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:24:15> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:23> export PS1="\u@\h-\t> "
+bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
+eltex-v12@eltex-2026-summer-21:24:50> export PS1="\u@\h-\t> "
+eltex-v12@eltex-2026-summer-21:25:59> bash --norc --noprofile
+eltex-v12@eltex-2026-summer-21:26:08> exit
+exit
+eltex-v12@eltex-2026-summer-21:27:05> bash
+eltex-v12@eltex-2026-summer:~$ exit
+exit
