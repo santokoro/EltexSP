@@ -1,0 +1,65 @@
+#include <unistd.h>   
+#include <stdio.h>    
+#include <stdlib.h>   
+#include <sys/wait.h> 
+
+int main() {
+    int p_to_c[2];  
+    int c_to_p[2];  
+
+    
+    if (pipe(p_to_c) == -1) {
+        perror("pipe p_to_c");
+        exit(1);
+    }
+
+    
+    if (pipe(c_to_p) == -1) {
+        perror("pipe c_to_p");
+        exit(1);
+    }
+
+    pid_t pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        exit(1);
+    }
+
+    if (pid == 0) {
+        close(p_to_c[1]);  
+        close(c_to_p[0]);  
+
+        char buf[64];
+        ssize_t n = read(p_to_c[0], buf, sizeof(buf) - 1);
+        if (n > 0) {
+            buf[n] = '\0';
+            printf("Child received: %s\n", buf);
+        }
+
+        write(c_to_p[1], "ready", 5);
+
+        close(p_to_c[0]);
+        close(c_to_p[1]);
+        exit(0);
+
+    } else {
+        
+        close(p_to_c[0]);  
+        close(c_to_p[1]);  
+
+        write(p_to_c[1], "start", 5);
+
+        char buf[64];
+        ssize_t n = read(c_to_p[0], buf, sizeof(buf) - 1);
+        if (n > 0) {
+            buf[n] = '\0';
+            printf("Parent received: %s\n", buf);
+        }
+
+        close(p_to_c[1]);
+        close(c_to_p[0]);
+        wait(NULL);  
+    }
+
+    return 0;
+}
