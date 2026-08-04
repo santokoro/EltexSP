@@ -11,7 +11,7 @@
 
 #define BUF_SIZE 4096
 
-/* Гарантированно записать count байт в fd */
+
 ssize_t write_all(int fd, const void *buf, size_t count) {
     const char *p = buf;
     size_t total = 0;
@@ -27,7 +27,7 @@ ssize_t write_all(int fd, const void *buf, size_t count) {
     return (ssize_t)total;
 }
 
-/* Гарантированно прочитать ровно count байт из fd */
+
 ssize_t read_exact(int fd, void *buf, size_t count) {
     char *p = buf;
     size_t total = 0;
@@ -63,9 +63,9 @@ int main(int argc, char *argv[]) {
         start_files = 3;
     }
 
-    int pc[2] = {-1, -1};   /* parent -> child (обычный pipe) */
-    int cp[2];              /* child -> parent (всегда обычный pipe) */
-    int pc_read, pc_write;  /* дескрипторы, которые реально используются */
+    int pc[2] = {-1, -1};   
+    int cp[2];              
+    int pc_read, pc_write;  
 
     if (pipe(cp) == -1) {
         perror("pipe cp");
@@ -88,34 +88,33 @@ int main(int argc, char *argv[]) {
     }
 
     if (pid == 0) {
-        /* ========== ДОЧЕРНИЙ ПРОЦЕСС ========== */
-        close(cp[0]);   /* ребёнок пишет в cp[1], не читает из cp[0] */
+        
+        close(cp[0]);   
 
         if (fifo_name) {
-            /* Открываем FIFO на чтение; блокируемся, пока родитель не откроет на запись */
+         
             pc_read = open(fifo_name, O_RDONLY);
             if (pc_read < 0) {
                 perror("child open fifo");
                 exit(1);
             }
         } else {
-            close(pc[1]);   /* ребёнок читает из pc[0], не пишет в pc[1] */
+            close(pc[1]);   
             pc_read = pc[0];
         }
 
-        /* Сообщаем родителю, что готовы принимать данные */
+        
         if (write_all(cp[1], "ready", 5) != 5) {
             perror("child write ready");
             exit(1);
         }
 
-        /* Основной цикл приёма файлов */
         while (1) {
             uint32_t name_len;
             if (read_exact(pc_read, &name_len, 4) != 4)
                 break;
 
-            if (name_len == 0)  /* сигнал завершения от родителя */
+            if (name_len == 0)  
                 break;
 
             if (name_len > 4096) {
@@ -141,7 +140,7 @@ int main(int argc, char *argv[]) {
                 break;
             }
 
-            /* Формируем имя выходного файла: имя.copy */
+            
             char *out_name = malloc(name_len + 6);
             if (!out_name) {
                 perror("child malloc");
@@ -159,7 +158,7 @@ int main(int argc, char *argv[]) {
                 continue;
             }
 
-            /* Читаем ровно file_size байт из канала и пишем в файл */
+            
             uint64_t remaining = file_size;
             char buf[BUF_SIZE];
             while (remaining > 0) {
@@ -182,35 +181,31 @@ int main(int argc, char *argv[]) {
         exit(0);
 
     } else {
-        /* ========== РОДИТЕЛЬСКИЙ ПРОЦЕСС ========== */
-        close(cp[1]);   /* родитель читает из cp[0], не пишет в cp[1] */
+        close(cp[1]);   
 
         if (fifo_name) {
-            /* Создаём FIFO, если ещё не существует */
             if (mkfifo(fifo_name, 0666) == -1 && errno != EEXIST) {
                 perror("mkfifo");
                 exit(1);
             }
-            /* Открываем на запись; блокируемся, пока ребёнок не откроет на чтение */
+            
             pc_write = open(fifo_name, O_WRONLY);
             if (pc_write < 0) {
                 perror("parent open fifo");
                 exit(1);
             }
         } else {
-            close(pc[0]);   /* родитель пишет в pc[1], не читает из pc[0] */
+            close(pc[0]);   
             pc_write = pc[1];
         }
 
-        /* Ждём сигнала готовности от дочернего процесса */
+        
         char ready_buf[6] = {0};
         if (read_exact(cp[0], ready_buf, 5) == 5) {
             ready_buf[5] = '\0';
-            /* Можно раскомментировать для отладки: */
-            /* printf("Parent: child is %s\n", ready_buf); */
         }
 
-        /* Цикл по всем указанным файлам */
+        
         for (int i = start_files; i < argc; i++) {
             struct stat st;
             if (stat(argv[i], &st) < 0) {
@@ -222,7 +217,7 @@ int main(int argc, char *argv[]) {
             uint32_t name_len = (uint32_t)strlen(argv[i]);
             uint64_t file_size = (uint64_t)st.st_size;
 
-            /* Заголовок: длина имени → имя → размер */
+            
             write_all(pc_write, &name_len, 4);
             write_all(pc_write, argv[i], name_len);
             write_all(pc_write, &file_size, 8);
@@ -234,7 +229,7 @@ int main(int argc, char *argv[]) {
                 continue;
             }
 
-            /* Передаём содержимое блоками */
+            
             char buf[BUF_SIZE];
             ssize_t n;
             while ((n = read(fd_in, buf, BUF_SIZE)) > 0) {
@@ -246,7 +241,7 @@ int main(int argc, char *argv[]) {
             close(fd_in);
         }
 
-        /* Сигнал завершения: длина имени = 0 */
+        
         uint32_t zero = 0;
         write_all(pc_write, &zero, 4);
 
@@ -256,7 +251,7 @@ int main(int argc, char *argv[]) {
         if (fifo_name)
             unlink(fifo_name);
 
-        wait(NULL);   /* ждём завершения дочернего процесса */
+        wait(NULL); 
     }
 
     return 0;
