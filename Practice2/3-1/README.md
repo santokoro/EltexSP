@@ -24,10 +24,15 @@ gcc -o perms perms.c main.c
 
 ## Примеры
 **Пример: Ввод прав и соответствующие битовое представление:**
+
 1. <img width="610" height="187" alt="image" src="https://github.com/user-attachments/assets/42c905b0-fb6a-41c0-b41e-f35fa0f1c9a2" />
+
 **Пример: Демонстрация правд доступа у файла:**
+
 2. <img width="589" height="150" alt="image" src="https://github.com/user-attachments/assets/225a5cdc-cc7f-455f-8542-5f8e111376b1" />
+
 **Пример: Изменение прав доступа**
+
 3. <img width="592" height="246" alt="image" src="https://github.com/user-attachments/assets/ac4af0ff-8408-405d-a657-ee3b53901c63" />
 
 
