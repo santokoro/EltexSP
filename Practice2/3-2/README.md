@@ -40,13 +40,20 @@ make test
 
 ## Примеры
 
-**Все locale**
+**Все local**
+
   <img width="544" height="384" alt="image" src="https://github.com/user-attachments/assets/cee9c61c-453b-4f2d-b4e7-27e38d703ed3" />
+  
 **Все remote**
+
   <img width="537" height="303" alt="image" src="https://github.com/user-attachments/assets/9347e2cf-57ab-49dd-b983-acfc60a3af2e" />
+  
 **Произвольный ввод**
+
   <img width="537" height="303" alt="image" src="https://github.com/user-attachments/assets/3aae0de8-1d5b-4adc-a3c2-8d664dcb06cf" />
+  
 **Запуск тестов**
+
 <img width="543" height="133" alt="image" src="https://github.com/user-attachments/assets/8f953586-2ef3-4cec-8038-9926f9d81005" />
 
 
