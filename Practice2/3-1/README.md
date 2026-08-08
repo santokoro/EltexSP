@@ -20,40 +20,18 @@
 gcc -o perms perms.c main.c
 ```
 
-## Запуск
 
-```bash
-./perms
-```
 
 ## Примеры
+1. <img width="610" height="187" alt="image" src="https://github.com/user-attachments/assets/42c905b0-fb6a-41c0-b41e-f35fa0f1c9a2" />
 
-### Пункт 1 — ввод прав
+2. <img width="589" height="150" alt="image" src="https://github.com/user-attachments/assets/225a5cdc-cc7f-455f-8542-5f8e111376b1" />
 
-```
-1 - ввести права
-2 - права файла
-3 - изменить права
-0 - выход
-Выбор: 1
-Права (rwxr-xr-x или 755): 755
-rwxr-xr-x  755  111101101
-```
+3. <img width="592" height="246" alt="image" src="https://github.com/user-attachments/assets/ac4af0ff-8408-405d-a657-ee3b53901c63" />
 
-### Пункт 2 — права файла
 
-```
-Выбор: 2
-Имя файла: myfile.txt
-rw-rw-rw-  666  110110110
--rw-rw-rw- 1 user group 6 Aug  8 15:08 myfile.txt
-```
 
-### Пункт 3 — изменение прав
+## Tests
+<img width="511" height="106" alt="image" src="https://github.com/user-attachments/assets/58e17f4c-57bb-4037-bc41-b2d7d92e1100" />
 
-```
-Выбор: 3
-Текущие: rw-r--r--  644  110100100
-Команда (например u+x, go-w): u+x
-Новые:   rwxr--r--  744  111100100
 ```
