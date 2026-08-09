@@ -51,7 +51,7 @@ make test
 
 <img width="482" height="517" alt="image" src="https://github.com/user-attachments/assets/4f3dc4aa-0d66-48fb-8b5c-d6ce9f0e500c" />
 
-##Запуск тестов
+## Запуск тестов
 
 <img width="533" height="443" alt="image" src="https://github.com/user-attachments/assets/52aebdaa-5d12-4495-978d-329f521b650b" />
 
