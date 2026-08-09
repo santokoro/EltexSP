@@ -29,15 +29,23 @@ make test
 - `test.c` — unit-тесты
 - `Makefile` — сборка библиотеки, программы и тестов
 
-##
+## Примеры работы программы
+
+**Добавление контакта**
 
 <img width="511" height="409" alt="image" src="https://github.com/user-attachments/assets/48939194-31bd-44ba-8508-1ea487cb9116" />
 
+**Редактирование контакта**
+
 <img width="489" height="585" alt="image" src="https://github.com/user-attachments/assets/1ac78284-a462-4b2a-bbc3-853e68244914" />
+
+**Просмотр контактов**
 
 <img width="489" height="585" alt="image" src="https://github.com/user-attachments/assets/544e9d87-b2ff-4ed2-9a16-e7dfbd696269" />
 
+**Удаление контакта**
+
 <img width="500" height="513" alt="image" src="https://github.com/user-attachments/assets/4fde2132-d2af-4463-8a27-5eb0451f5777" />
 
-
+## Запуск тестов
 <img width="452" height="76" alt="image" src="https://github.com/user-attachments/assets/0c94eb65-89c6-429d-b543-4808fd182ad4" />
